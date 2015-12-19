@@ -1,24 +1,37 @@
 #!/usr/bin/env bash
 
 
-##############################################################
-# System Defaults											 #
-##############################################################
+# created by: eric boxer 2015
+# email: eric@ericboxer.net  
+# http://ericboxer.net 	
+
+# based on dotfiles created by RayHightower, mathiasbynes, and s10wen
+
+
+
+# System Defaults
+####
 
 # Request admin password upfront
 sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `.osx` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
 sudo systemsetup -settimezone "America/New_York" > /dev/null
 
 
-##############################################################
-# Screen													 #
-##############################################################
+
+# Screen
+####
+
 
 # Save screenshots to the documents/Screenshots
 mkdir -p "${HOME}/Documents/Screenshots"
 defaults write com.apple.screencapture location -string "${HOME}/Documents/Screenshots"
+killall SystemUIServer #restart the server so this takes affect right away
+
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
@@ -27,9 +40,9 @@ defaults write com.apple.screencapture type -string "png"
 defaults write com.apple.screencapture disable-shadow -bool true
 
 
-##############################################################
-# Finder													 #
-##############################################################
+
+# Finder
+###
 
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
@@ -59,9 +72,9 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 sudo nvram boot-args="mbasd=1"
 
 
-##############################################################
-# Hot Corners												 #
-##############################################################
+
+# Hot Corners
+###
 
 # Hot corners
 # Possible values:
