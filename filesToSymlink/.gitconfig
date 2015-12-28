@@ -1,6 +1,6 @@
 [user]
 	name = Eric Boxer
-	email = eric.boxer@disney.com
+	email = eboxhead@gmail.com
 	name = =
 [filter "lfs"]
 	clean = git-lfs clean %f
