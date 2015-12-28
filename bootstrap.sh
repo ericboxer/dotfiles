@@ -6,12 +6,23 @@
 
 #This will install a bunch of applciations used
 
+# Set the temp storage for downloading zips and opening installers
+
+TST=~/Desktop/Temp
+
+mkdir $TST
 
 # Request admin password upfront
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# Installing Dropbox
+Echo "Installing Dropbox [required]..."
+source installDropbox.sh
+
+
 
 echo "Creating dotfiles and symlinks..."
 echo ""
@@ -31,3 +42,16 @@ fi
 echo "updating Homebrew..."
 echo""
 brew update
+
+
+# Install Sublime Text
+read -p "Install Sublime Text? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    source installSublime.sh
+fi
+
+
+#Delete Temp storage folder on the desktop
+rm -r $TST
