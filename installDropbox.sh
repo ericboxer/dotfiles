@@ -12,14 +12,17 @@ curl -Lo $TST/dropbox.zip https://www.dropbox.com/s/kk8icldkk4lu86b/Dropbox.zip?
 echo "Done."
 echo ""
 echo ""
-echo "Copying to applications folder..."
 
 # Unzip file to the root applications folder
+echo "Unzipping..."
 unzip -nq $TST/dropbox.zip -d ~/Desktop
 echo ""
 echo ""
 
 # Run Dropbox installer
+echo "Running Installer..."
+echo ""
+echo ""
 open -a $TST/"Dropbox.app"
 
 # Wait for user input to continue
