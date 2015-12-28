@@ -1,7 +1,6 @@
 [user]
 	name = Eric Boxer
 	email = eboxhead@gmail.com
-	name = =
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
