@@ -1,7 +1,8 @@
+[user]
+	name = Eric Boxer
+	email = eric.boxer@disney.com
+	name = =
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
-[user]
-	name = Eric Boxer
-	email = eboxhead@gmail.com
