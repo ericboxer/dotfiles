@@ -1,0 +1,20 @@
+# Aliases for making it easer to get around the Terminal
+
+# Shorcuts to get around faster
+alias db="cd ~/Dropbox"
+alias dot="cd ~/dotfiles"
+alias dc="cd ~/Documents"
+alias dl="cd ~/Downliads"
+alias ..="cd .."
+alias hd="cd /"
+
+# Git
+alias g='git'
+alias gaa="g add ."
+alias gs="g status"
+alias gp="g push origin master"
+alias gitme="g config --global user.email eboxhead@gmail.com"
+alias gitdis="g config --global user.email eric.boxer@disney.com"
+
+# Terminal Commands
+alias lsa="ls -a"

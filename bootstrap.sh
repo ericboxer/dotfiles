@@ -23,11 +23,12 @@ Echo "Installing Dropbox [required]..."
 source installDropbox.sh
 
 
-
 echo "Creating dotfiles and symlinks..."
 echo ""
 source symlinks.sh
 
+# Maker usr/local writeable
+sudo chown -R $(whoami):admin /usr/local
 
 # Check for Homebrew,
 echo "Checking for homebrew..."
@@ -43,6 +44,16 @@ echo "updating Homebrew..."
 echo""
 brew update
 
+#install some fun items
+echo "installing wget..."
+brew install wget
+
+# Install Ruby
+echo "installing ruby..."
+brew install ruby
+
+# Update the gems...
+gem update --systems
 
 # Install Sublime Text
 read -p "Install Sublime Text? " -n 1 -r
