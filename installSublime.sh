@@ -49,5 +49,9 @@ rm -r User
 ln -s ~/Dropbox/Sublime/User
 cd ~/dotfiles
 
+# Create CLI call for sublime - sub
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sub
+
+
 # finsihs installing Sublime Text 
 echo "Finished installing Sublime Text."
