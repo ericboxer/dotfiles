@@ -4,4 +4,5 @@
 # email: eric@ericboxer.net  
 # http://ericboxer.net 
 
-#This will install a bunch of applciations used
+#This will install all the fonts located in the fonts directory in dropbox
+
