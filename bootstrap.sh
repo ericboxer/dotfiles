@@ -30,6 +30,10 @@ source symlinks.sh
 # Maker usr/local writeable
 sudo chown -R $(whoami):admin /usr/local
 
+echo "Installing CocoaPods..."
+echo ""
+source installCocoaPods.sh
+
 # Check for Homebrew,
 echo "Checking for homebrew..."
 echo ""
@@ -53,7 +57,12 @@ echo "installing ruby..."
 brew install ruby
 
 # Update the gems...
+echo "Updating Ruby..."
 gem update --systems
+
+# install Node.js
+echo "installing Node.js"
+brew install node 
 
 # Install Sublime Text
 read -p "Install Sublime Text? " -n 1 -r
