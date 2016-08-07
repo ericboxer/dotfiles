@@ -4,7 +4,7 @@
 alias db="cd ~/Dropbox"
 alias dot="cd ~/dotfiles"
 alias dc="cd ~/Documents"
-alias dl="cd ~/Downliads"
+alias dl="cd ~/Downloads"
 alias ..="cd .."
 alias hd="cd /"
 
@@ -18,3 +18,6 @@ alias gitdis="g config --global user.email eric.boxer@disney.com"
 
 # Terminal Commands
 alias lsa="ls -a"
+
+# Python
+alias python = "python2"
