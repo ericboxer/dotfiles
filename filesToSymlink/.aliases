@@ -19,5 +19,7 @@ alias gitdis="g config --global user.email eric.boxer@disney.com"
 # Terminal Commands
 alias lsa="ls -a"
 
-# Python
-alias python = "python2"
+# Sublime Text
+alias sublime="subl"
+
+alias hellopy="python ~/dotfiles/python/hello.py"
