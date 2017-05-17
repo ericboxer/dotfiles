@@ -19,9 +19,12 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Installing Dropbox
+Echo "Installing Chrome [required]..."
+source installChrome.sh
+
+# Installing Dropbox
 Echo "Installing Dropbox [required]..."
 source installDropbox.sh
-
 
 echo "Creating dotfiles and symlinks..."
 echo ""
@@ -52,6 +55,7 @@ brew update
 echo "installing wget..."
 brew install wget
 
+# I to date havent used Ruby
 # Install Ruby
 echo "installing ruby..."
 brew install ruby
@@ -63,6 +67,14 @@ gem update --systems
 # install Node.js
 echo "installing Node.js"
 brew install node 
+
+# install Pytohn 3
+echo "installing Python 3"
+brew install python3
+
+# install mono
+echo "installing Mono"
+brew install mono
 
 # Install Sublime Text
 read -p "Install Sublime Text? " -n 1 -r

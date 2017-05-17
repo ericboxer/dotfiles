@@ -8,7 +8,7 @@
 
 # Downloads file
 echo "Downloading Dropbox..."
-curl -Lo $TST/dropbox.zip https://www.dropbox.com/s/kk8icldkk4lu86b/Dropbox.zip?dl=0
+curl -Lo $TST/dropbox.zip https://www.dropbox.com/s/kk8icldkk4lu86b/Dropbox.zip?dl=1
 echo "Done."
 echo ""
 echo ""
