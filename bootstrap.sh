@@ -32,6 +32,10 @@ echo "Creating dotfiles and symlinks..."
 echo ""
 source symlinks.sh
 
+echo "Doing scripty things..."
+echo ""
+source scripts/makeex.sh
+
 # Maker usr/local writeable
 sudo chown -R $(whoami):admin /usr/local
 
