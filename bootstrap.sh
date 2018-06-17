@@ -22,9 +22,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 Echo "Installing Chrome [required]..."
 source installChrome.sh
 
+
+
 # Installing Dropbox
-Echo "Installing Dropbox [required]..."
-source installDropbox.sh
+#Echo "Installing Dropbox [required]..."
+#source installDropbox.sh
 
 echo "Creating dotfiles and symlinks..."
 echo ""
