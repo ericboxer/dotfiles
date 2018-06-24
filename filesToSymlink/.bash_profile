@@ -1,6 +1,5 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
-# export PATH="$PATH:$HOME/scripts";
 export PATH="$HOME/dotfiles/scripts:$PATH";
 
 #ignore DS_Store
