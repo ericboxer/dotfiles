@@ -1,0 +1,11 @@
+cowsay
+python3
+pyenv
+wget
+node
+node@8
+lua
+carthage
+exercism
+ffmpeg
+git-lfs

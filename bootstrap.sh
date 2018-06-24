@@ -8,9 +8,8 @@
 
 # Set the temp storage for downloading zips and opening installers
 
-TST=~/Desktop/Temp
-
-mkdir $TST
+brewsFile="brewInstalls.txt"
+casksFile="caskInstalls.txt"
 
 # Request admin password upfront
 sudo -v
@@ -18,30 +17,21 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Installing Dropbox
-Echo "Installing Chrome [required]..."
-source installChrome.sh
+# # Get all the normal dotfiles in place
+# echo "Creating dotfiles and symlinks..."
+# echo ""
+# source symlinks.sh
+source ~/.osx 
+source ~/.bash_profile
 
-
-
-# Installing Dropbox
-#Echo "Installing Dropbox [required]..."
-#source installDropbox.sh
-
-echo "Creating dotfiles and symlinks..."
-echo ""
-source symlinks.sh
-
-echo "Doing scripty things..."
-echo ""
-source scripts/makeex.sh
+# # Process all my built in scripts
+# echo "Doing scripty things..."
+# echo ""
+# source scripts/makeex.py
 
 # Maker usr/local writeable
 sudo chown -R $(whoami):admin /usr/local
 
-echo "Installing CocoaPods..."
-echo ""
-source installCocoaPods.sh
 
 # Check for Homebrew,
 echo "Checking for homebrew..."
@@ -50,6 +40,8 @@ echo ""
 if test ! $(which brew); then
   echo "Installing homebrew..."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+  echo "Homebrew is already installed..."
 fi
 
 # Update homebrew recipes
@@ -57,39 +49,14 @@ echo "updating Homebrew..."
 echo""
 brew update
 
-#install some fun items
-echo "installing wget..."
-brew install wget
-
-# I to date havent used Ruby
-# Install Ruby
-echo "installing ruby..."
-brew install ruby
-
-# Update the gems...
-echo "Updating Ruby..."
-gem update --systems
-
-# install Node.js
-echo "installing Node.js"
-brew install node 
-
-# install Pytohn 3
-echo "installing Python 3"
-brew install python3
-
-# install mono
-echo "installing Mono"
-brew install mono
-
-# Install Sublime Text
-read -p "Install Sublime Text? " -n 1 -r
-echo    # (optional) move to a new line
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    source installSublime.sh
-fi
+# Install everything from Homebrew
+casksToInstall=$(cat $casksFile | tr -s '\n' ' ')
+brewsToInstall=$(cat $brewsFile | tr -s '\n' ' ')
+# brew cask install $casksToInstall
+# brew install -v $brewsToInstall
 
 
-#Delete Temp storage folder on the desktop
-rm -r $TST
+# Node does some funny things... move it over to LTS instead of Newest
+currentNode=$(grep 'node@' $brewsFile)
+brew unlink node && brew link --overwrite --force $currentNode
+node -v
