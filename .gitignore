@@ -1,4 +1,5 @@
-*vscode
+.DS_Store
+.vscode
 
 scripts/makeex
 scripts/CSV-Rename

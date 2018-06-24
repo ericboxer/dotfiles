@@ -26,5 +26,5 @@ else
 fi
 	ln -s $df$f $hd$f
 	echo "creating $hd$f"
-
+	echo "running $f"
 done

@@ -1,0 +1,40 @@
+{
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+    "python.autoComplete.addBrackets": true,
+    "editor.renderWhitespace": "all",
+    "files.autoSave": "onFocusChange",
+    "python.pythonPath": "/usr/local/opt/python/bin/python3.6",
+    "sync.gist": "b8a5400781dd020c1c70e48c314fc6d3",
+    "sync.host": "",
+    "sync.pathPrefix": "",
+    "sync.quietSync": false,
+    "sync.askGistName": false,
+    "sync.removeExtensions": true,
+    "sync.syncExtensions": true,
+    "sync.autoDownload": true,
+    "sync.autoUpload": true,
+    "sync.lastUpload": "2018-06-23T14:11:36.251Z",
+    "sync.lastDownload": "2018-06-21T16:11:36.574Z",
+    "sync.forceDownload": false,
+    "[markdown]": {
+        
+    },
+    "workbench.iconTheme": "eq-material-theme-icons-darker",
+    "materialTheme.autoApplyIcons": true,
+    // "workbench.colorTheme": "Material Theme Darker",
+    "workbench.colorTheme": "Winter is Coming (Dark)",
+    "materialTheme.fixIconsRunning": false,
+    "markdown-pdf.displayHeaderFooter": false,
+    "markdown-pdf.format": "Letter",
+    "markdown-pdf.breaks": true,
+    "bracketPairColorizer.showBracketsInGutter": true,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "editor.fontLigatures": true,
+    "editor.fontFamily": " Fira Code, Menlo, Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
+    "window.zoomLevel": 1,
+    "files.hotExit": "onExit",
+    "editor.minimap.enabled": true,
+    "editor.folding": true
+}
