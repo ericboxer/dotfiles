@@ -20,7 +20,7 @@ parser.add_argument('-f','--files', nargs = '*', action = 'append' )
 args = parser.parse_args()
 
 # =====================
-# Constants 
+# Constants!
 # =====================
 makeEXE = stat.S_IRWXU # | stat.S_IRWXO | stat.S_IRWXU
 # TODO: Add accesabilty for non *NIX machines
@@ -42,7 +42,7 @@ def makeExecutable(file):
 def makeSymlink(file):
     try:
         expandedFile = os.path.join(scriptDirectory, file)
-        filename, fileExtension = os.path.splitext(expandedFile)
+        filename, _ = os.path.splitext(expandedFile)
         if os.path.islink(filename) or os.path.isfile(filename):
             os.remove(filename)
             print(f"Symlink for {file} existed, removed.")
@@ -55,6 +55,9 @@ def addScript(file):
     makeExecutable(file)
     makeSymlink(file)
 
+# =====================
+# Main! 
+# =====================
 
 if __name__ == '__main__':
 
