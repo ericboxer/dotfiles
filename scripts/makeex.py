@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.6
+#!/usr/bin/env python3
 import argparse
 import os
 import stat
@@ -26,8 +26,6 @@ makeEXE = stat.S_IRWXU # | stat.S_IRWXO | stat.S_IRWXU
 # TODO: Add accesabilty for non *NIX machines
 scriptDirectory = os.path.expanduser('~/dotfiles/scripts')
 
-print(scriptDirectory)
-
 # grats 
 
 # =====================
@@ -35,7 +33,10 @@ print(scriptDirectory)
 # =====================
 def makeExecutable(file):
     try:
-        os.chmod(file, makeEXE)
+        fileWithFullPath = os.path.join(scriptDirectory,file)
+        st = os.stat(fileWithFullPath)
+        os.chown(fileWithFullPath, os.getuid(), os.getgid())
+        os.chmod(fileWithFullPath, 0o775)
     except Exception as e:
         print(e)
 
@@ -64,6 +65,7 @@ if __name__ == '__main__':
     if args.files != None:
         try:
             for l in args.files[0]:
+                print(l)
                 addScript(l)
         except Exception as e:
             print(e)
