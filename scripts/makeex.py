@@ -22,11 +22,9 @@ args = parser.parse_args()
 # =====================
 # Constants!
 # =====================
-makeEXE = stat.S_IRWXU # | stat.S_IRWXO | stat.S_IRWXU
 # TODO: Add accesabilty for non *NIX machines
 scriptDirectory = os.path.expanduser('~/dotfiles/scripts')
 
-# grats 
 
 # =====================
 # Functions! 
@@ -65,7 +63,7 @@ if __name__ == '__main__':
     if args.files != None:
         try:
             for l in args.files[0]:
-                print(l)
+                print(f"Processing {l}")
                 addScript(l)
         except Exception as e:
             print(e)
