@@ -6,6 +6,7 @@ cask
 brew-cask-completion
 python3
 pyenv
+pyenv-virtualenv
 wget
 node
 node@8
