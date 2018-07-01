@@ -1,6 +1,8 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 export PATH="$HOME/dotfiles/scripts:$PATH";
+export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}";
+
 
 #ignore DS_Store
 export FIGNORE=DS_Store
@@ -13,15 +15,5 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done;
 unset file;
 
-# Setting PATH for Python 2.7
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 
-
-export PATH
-
-# # Setting PATH for Python 2.7
-# # The original version is saved in .bash_profile.pysave
-# PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-# export PATH
 eval $(/usr/libexec/path_helper -s)

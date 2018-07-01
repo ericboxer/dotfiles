@@ -22,3 +22,7 @@ alias lsa="ls -a"
 
 # Sublime Text
 alias sublime="subl"
+
+#python stuffs
+alias python='python3'
+alias python2='\python'
