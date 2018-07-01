@@ -1,9 +1,11 @@
 dropbox
 google-chrome
+appcleaner
 vlc
 gitkraken
 1password
 1password-cli
+evernote
 visual-studio-code
 pycharm
 webstorm
@@ -13,10 +15,12 @@ quadrosync
 duet
 microsoft-office
 skype
+slack
 docker
-appcleaner
 packetsender
 wireshark
 atext
 parallels
 vlc
+minecraft
+bartender

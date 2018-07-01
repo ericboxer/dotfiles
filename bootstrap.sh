@@ -52,8 +52,8 @@ brew update
 # Install everything from Homebrew
 casksToInstall=$(cat $casksFile | tr -s '\n' ' ')
 brewsToInstall=$(cat $brewsFile | tr -s '\n' ' ')
-# brew cask install $casksToInstall
-# brew install -v $brewsToInstall
+brew cask install $casksToInstall
+brew install -v $brewsToInstall
 
 
 # Node does some funny things... move it over to LTS instead of Newest

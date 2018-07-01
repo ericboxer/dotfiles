@@ -1,4 +1,9 @@
 cowsay
+git
+git-lfs
+bash-completion
+cask
+brew-cask-completion
 python3
 pyenv
 wget
@@ -8,4 +13,4 @@ lua
 carthage
 exercism
 ffmpeg
-git-lfs
+youtube-dl
