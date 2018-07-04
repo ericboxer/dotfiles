@@ -60,3 +60,6 @@ brew install -v $brewsToInstall
 currentNode=$(grep 'node@' $brewsFile)
 brew unlink node && brew link --overwrite --force $currentNode
 node -v
+
+# Do pyenv stuffs
+updatePyenv
