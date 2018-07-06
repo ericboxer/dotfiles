@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import argparse
 import socket
 import time
@@ -7,6 +8,15 @@ import time
 Quickly send a udp packet to a required ip and port
 '''
 
+# =====================
+# Meta! 
+# =====================
+__author__ = "Eric Boxer"
+__version__ = "0.0.1"
+
+# =====================
+# Parsing!! 
+# =====================
 parser = argparse.ArgumentParser(description="Quickly send a UDP packet to a required port")
 
 messageType = parser.add_mutually_exclusive_group(required=True)
@@ -25,7 +35,9 @@ args = parser.parse_args()
 if args.verbose:
     print(args)
 
-
+# =====================
+# Functions!! 
+# =====================
 def sendPacket():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.bind(('', 0))
@@ -45,6 +57,9 @@ def sendPacket():
         time.sleep(sleepTime)
     s.close()
 
+
+# =====================
+# Do it!! 
+# =====================
 if __name__ == "__main__":
-    
     sendPacket()
