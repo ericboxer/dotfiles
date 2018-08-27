@@ -9,6 +9,7 @@ evernote
 visual-studio-code
 pycharm
 webstorm
+electron
 appcode
 clion
 quadrosync
@@ -24,3 +25,4 @@ parallels
 vlc
 minecraft
 bartender
+notion
