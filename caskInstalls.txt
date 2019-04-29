@@ -4,14 +4,11 @@ appcleaner
 vlc
 gitkraken
 1password
-1password-cli
 evernote
 visual-studio-code
 pycharm
 webstorm
-electron
 appcode
-clion
 quadrosync
 duet
 microsoft-office
@@ -20,9 +17,9 @@ slack
 docker
 packetsender
 wireshark
-atext
+alfred
 parallels
 vlc
 minecraft
 bartender
-notion
+iterm2
