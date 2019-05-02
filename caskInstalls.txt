@@ -9,7 +9,6 @@ visual-studio-code
 pycharm
 webstorm
 appcode
-quadrosync
 duet
 microsoft-office
 skype
