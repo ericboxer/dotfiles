@@ -1,0 +1,2 @@
+font-meslo-nerd-font
+font-meslo-nerd-font-mono

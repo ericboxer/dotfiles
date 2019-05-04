@@ -8,8 +8,9 @@
 
 # Set the temp storage for downloading zips and opening installers
 
-brewsFile="brewInstalls.txt"
-casksFile="caskInstalls.txt"
+brewsFile="curl -L https://raw.githubusercontent.com/ericboxer/dotfiles/master/brewInstalls.txt"
+casksFile="curl -L https://raw.githubusercontent.com/ericboxer/dotfiles/master/caskInstalls.txt"
+brewFontsFile="curl -L https://raw.githubusercontent.com/ericboxer/dotfiles/master/brewFontsInstalls.txt"
 
 # Request admin password upfront
 sudo -v
@@ -17,20 +18,31 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+echo "Createing required folders..."
+
+
+mkdir /usr/local/include # see https://github.com/Homebrew/brew/issues/3228 for this
+
+
+
+
+sudo chown -R $(whoami) $(brew --prefix)/*
+
+
 # # Get all the normal dotfiles in place
-# echo "Creating dotfiles and symlinks..."
+echo "Creating dotfiles and symlinks..."
 # echo ""
 # source symlinks.sh
-source ~/.osx 
-source ~/.bash_profile
+# source ~/.osx 
+# source ~/.bash_profile
 
 # # Process all my built in scripts
 # echo "Doing scripty things..."
 # echo ""
 # source scripts/makeex.py
 
-# Maker usr/local writeable
-sudo chown -R $(whoami):admin /usr/local
+# Maker usr/local writeable 
+# sudo chown -R $(whoami):admin /usr/local
 
 
 # Check for Homebrew,
@@ -45,21 +57,22 @@ else
 fi
 
 # Update homebrew recipes
-echo "updating Homebrew..."
-echo""
-brew update
+# echo "updating Homebrew..."
+# echo""
+# brew update
 
 # Install everything from Homebrew
-casksToInstall=$(cat $casksFile | tr -s '\n' ' ')
-brewsToInstall=$(cat $brewsFile | tr -s '\n' ' ')
-brew cask install $casksToInstall
-brew install -v $brewsToInstall
+# Not using this anymore as 
 
+echo "Importing casks"
+casksToInstall=$($casksFile | tr -s '\n' ' ')
+brewsToInstall=$($brewsFile | tr -s '\n' ' ')
+brew install -v $brewsToInstall
+brew cask install -v $casksToInstall
+
+brew tap homebrew/cask-fonts
 
 # Node does some funny things... move it over to LTS instead of Newest
-currentNode=$(grep 'node@' $brewsFile)
-brew unlink node && brew link --overwrite --force $currentNode
-node -v
-
-# Do pyenv stuffs
-updatePyenv
+# currentNode=$(grep 'node@' $brewsFile)
+# brew unlink node && brew link --overwrite --force $currentNode
+# node -v
