@@ -13,7 +13,7 @@ brewsFile="curl -L https://raw.githubusercontent.com/ericboxer/dotfiles/master/b
 casksFile="curl -L https://raw.githubusercontent.com/ericboxer/dotfiles/master/caskInstalls.txt"
 brewFontsFile="curl -L https://raw.githubusercontent.com/ericboxer/dotfiles/master/brewFontsInstalls.txt"
 folders=($(curl -L https://raw.githubusercontent.com/ericboxer/dotfiles/master/foldersInstalls.txt | tr -s '\n' ' '))
-symlinksFile=($(curl -L https://raw.githubusercontent.com/ericboxer/dotfiles/master/symlinksInstalls.txt | tr -s '\n' ' '))
+symlinksFile=$(curl -L https://raw.githubusercontent.com/ericboxer/dotfiles/Github_files/symlinksInstalls.txt)
 
 
 # Request admin password upfront
@@ -28,10 +28,6 @@ for i in ${folders[*]} do
   mkdir -p "$i"
 done
 
-for i in ${symlinksFile[*]} do
-  curl -L "https://raw.githubusercontent.com/ericboxer/dotfiles/master/filesToSymlink/$i" >"~/.dotfiles/filesToSymlink/$i"
-  ln -s "~/.dotfiles/filesToSymlink/$i" "~/$i"
-done
 
 mkdir /usr/local/include # see https://github.com/Homebrew/brew/issues/3228 for this
 
@@ -41,8 +37,15 @@ sudo chown -R $(whoami) $(brew --prefix)/*
 
 # # Get all the normal dotfiles in place
 echo "Creating dotfiles and symlinks..."
+for i in ${symlinksFile} do
+  { # try
+    curl -L "https://raw.githubusercontent.com/ericboxer/dotfiles/master/filesToSymlink/$i" -o "~/.dotfiles/filesToSymlink/$i"
+  }||{ # catch
+    touch "~/.dotfiles/filesToSymlink/$i"
+  }
+  ln -s "~/.dotfiles/filesToSymlink/$i" "~/$i"
+done
 
-curl -L 
 
 # echo ""
 # source symlinks.sh
