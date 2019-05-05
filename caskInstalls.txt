@@ -18,7 +18,6 @@ packetsender
 wireshark
 alfred
 parallels
-vlc
 minecraft
 bartender
 iterm2

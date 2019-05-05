@@ -1,2 +1,2 @@
-~/Dotfiles/Scripts
-~/Dotfiles/FilesToSymlink
+~/.dotfiles/Scripts
+~/.dotfiles/FilesToSymlink
