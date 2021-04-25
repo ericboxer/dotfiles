@@ -1,0 +1,4 @@
+[submodule "filesToSymlink/powerlevel10k"]
+	url = https://github.com/romkatv/powerlevel10k
+[submodule "filesToSymlink/.zsh/zsh-syntax-highlighting"]
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
