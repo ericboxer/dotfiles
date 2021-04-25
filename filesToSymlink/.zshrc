@@ -1,3 +1,6 @@
+# Path Export for Homebrew
+export PATH="/usr/local/sbin:$PATH"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -33,12 +36,18 @@ for file in ~/.{path,exports,aliases,functions,extra}; do
 done;
 unset file;
 
-
+# These need to be here. I dont knwo why, but it does
 eval $(/usr/libexec/path_helper -s)
 eval $(thefuck --alias)
 
+
+# Themese!
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# This (according to the git) should always be the last thing loaded... 
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
