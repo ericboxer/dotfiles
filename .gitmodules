@@ -2,3 +2,5 @@
 	url = https://github.com/romkatv/powerlevel10k
 [submodule "filesToSymlink/.zsh/zsh-syntax-highlighting"]
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "filesToSymlink/.zsh/zsh-autosuggestions"]
+	url = https://github.com/zsh-users/zsh-autosuggestions
