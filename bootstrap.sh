@@ -17,13 +17,8 @@ source symlinks.sh
 source ~/.osx 
 # source ~/.bash_profile
 
-# # Process all my built in scripts
-# echo "Doing scripty things..."
-# echo ""
-# source scripts/makeex.py
 
 # Maker usr/local writeable 
-# sudo chown -R $(whoami):admin /usr/local
 mkdir /usr/local/include # see https://github.com/Homebrew/brew/issues/3228 for this
 sudo chown -R $(whoami) $(brew --prefix)/*
 
@@ -41,7 +36,6 @@ fi
 
 # Update homebrew recipes
 echo "updating Homebrew..."
-# echo""
 brew update
 
 # Install everything from Homebrew

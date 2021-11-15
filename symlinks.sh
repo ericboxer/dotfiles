@@ -8,7 +8,7 @@
 # Creates symlinks to dotfiles that need to be referenced by the system.
 
 hd=~/
-df=~/dotfiles/filesToSymlink/
+df=~/Dotfiles/filesToSymlink/
 
 
 for f in $(ls -A $df)

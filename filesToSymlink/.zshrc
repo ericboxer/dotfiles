@@ -45,7 +45,6 @@ eval $(thefuck --alias)
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # This (according to the git) should always be the last thing loaded... 
