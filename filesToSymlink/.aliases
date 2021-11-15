@@ -30,3 +30,8 @@ alias python2='\python'
 #folder and file colors
 alias dircolors='gdircolors'
 alias ls="ls -G"
+
+# Homebrew
+
+alias brewout="brew update -v && brew outdated"
+alias brewdump="cd ~/Dotfiles && brew bundle dump --force --describe && cd -"
